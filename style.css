@@ -1,0 +1,362 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg-color: #111111;
+    --second-bg-color: #151515;
+    --text-color: #ffffff;
+    --main-color: #04fffb;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 3rem 9%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.logo span {
+    color: var(--main-color);
+}
+
+.navar a {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-left: 3rem;
+    text-transform: capitalize;
+    transition: color 0.3s;
+}
+
+.navar a:hover,
+.navar a.active {
+    color: var(--main-color);
+}
+
+#menu-icon {
+    display: none; /* Add responsive behavior with media queries */
+}
+
+/* Section Layout */
+section {
+    padding: 10rem 9%;
+    min-height: 100vh;
+}
+
+.heading {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.heading span {
+    color: var(--main-color);
+}
+
+/* Home Section */
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.home-img img {
+    width: 40rem;
+    border-radius: 50%;
+    box-shadow: 0 0 15px var(--main-color);
+}
+
+.home-content {
+    max-width: 600px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.social-icons a {
+    font-size: 2rem;
+    color: var(--main-color);
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+    color: var(--text-color);
+}
+
+/* About Section */
+.about {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+}
+
+.about-content {
+    max-width: 600px;
+}
+
+/* Services Section */
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.services-box {
+    padding: 2rem;
+    background: var(--second-bg-color);
+    text-align: center;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.services-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.services-box h4 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Contact Section Heading */
+.contact .heading {
+    margin-bottom: 3rem;
+    font-size: 3.5rem;
+    color: #00bcd4; /* Bright accent color */
+    text-transform: uppercase;
+}
+
+/* Form Container */
+.contact-form {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #1c1c1c; /* Darker background for the form */
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Input and Textarea Styling */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1.5rem;
+    border: 2px solid #00bcd4;
+    background: #333; /* Slightly darker background for inputs */
+    color: #fff; /* White text for contrast */
+    font-size: 1.6rem;
+    border-radius: 8px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #00bcd4;
+    box-shadow: 0 0 10px #00bcd4;
+}
+
+/* Textarea Specific Styling */
+.contact-form textarea {
+    height: 200px; /* Adjust height for better visibility */
+    resize: vertical; /* Allow resizing vertically */
+}
+
+/* Styling for the Submit Button */
+.contact-form button {
+    background: #00bcd4;
+    color: #121212; /* Dark text color for contrast */
+    padding: 1.2rem 2.5rem;
+    font-size: 1.7rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form button:hover {
+    background: #fff;
+    color: #121212;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+}
+
+.contact-form button:active {
+    transform: translateY(1px);
+}
+
+/* Ensuring Input Fields and Textarea are Well Aligned */
+.contact-form .input-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.contact-form .input-box input,
+.contact-form .input-box select {
+    flex: 1 1 48%; /* Flexible inputs with space between them */
+}
+
+.contact-form .input-box select {
+    padding: 1.5rem;
+    font-size: 1.6rem;
+}
+
+/* Styling for the Footer Social Icons */
+.footer .social a {
+    color: #fff;
+    font-size: 2rem;
+    padding: 1rem;
+    transition: color 0.3s;
+}
+
+.footer .social a:hover {
+    color: #00bcd4; /* Accent color on hover */
+}
+
+/* Fix Input Padding and Alignment for Responsive Design */
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 2rem 1rem;
+    }
+
+    .contact-form .input-box input,
+    .contact-form .input-box select {
+        flex: 1 1 100%;
+    }
+}
+
+/* Contact Section */
+.contact-container {
+    background-color: #1e1e1e;
+    color: white;
+    padding: 30px;
+    width: 30%;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.contact-container {
+    background-color: #1e1e1e;
+    color: white;
+    padding: 15px; /* Reduced padding */
+    width: 50%; /* Adjust width as needed */
+    margin: auto;
+    border-radius: 10px;
+    max-height: 400px; /* Set a max-height if necessary */
+    overflow-y: auto; /* Allows scroll if the content exceeds max height */
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 1rem;
+    margin: 10px 0 5px;
+}
+
+input, textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    border: 2px solid #00B5E2;
+    border-radius: 5px;
+    background-color: #1e1e1e;
+    color: white;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #00B5E2;
+}
+
+textarea {
+    height: 150px;
+}
+
+.submit-btn {
+    background-color: #00B5E2;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #008B9F;
+}
+
+/* Social Media Links Styling */
+.social {
+    display: flex;
+    justify-content: center; /* Centers the icons horizontally */
+    gap: 2rem; /* Adds space between each icon */
+    margin-top: 2rem; /* Adds space above the icons */
+}
+
+.social a {
+    font-size: 2.5rem; /* Set the size of the icons */
+    color: white; /* Default color for icons */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.social a:hover {
+    color: #00B5E2; /* Change color on hover */
+    transform: scale(1.2); /* Slightly enlarge icons on hover */
+}
+
+/* Responsive Adjustments for Smaller Screens */
+@media (max-width: 768px) {
+    .social a {
+        font-size: 2rem; /* Slightly smaller icons for tablets */
+        gap: 1.5rem; /* Reduced gap between icons on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .social a {
+        font-size: 1.8rem; /* Even smaller icons on very small screens */
+        gap: 1rem; /* Even smaller gap between icons */
+    }
+}
